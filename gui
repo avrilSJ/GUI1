@@ -1,0 +1,260 @@
+package GUI;
+import java.awt.*;
+import javax.swing.*;
+
+public class Zyke {
+	// Containers
+	private JFrame f1;
+	private JPanel hPan, cPan, lPan, rPan, dPan;
+	 
+	// Components
+	private JTextArea Title;
+	private Label lName, lEmail, lGender, lPhone, lContact, lPark, lRoom, lRes, lAtt, lList, lList2, lList3;
+	private TextField tFName, tLName, tEmail, tPhone, tContact;
+	private JRadioButton bMale, bFemale, bYes, bNo, bR1, bR2, bR3;
+	private JRadioButton bD1, bD2, bD3, bD4, bD5, bD6;
+	private JRadioButton bA1, bA2, bA3;
+	private JRadioButton bYes2, bNo2;
+	
+	// GridBagLayout
+	GridBagLayout gb = new GridBagLayout();
+	GridBagConstraints gc = new GridBagConstraints();
+	
+	public Zyke()
+	{
+		// FRAME
+		f1 = new JFrame("General Admission Registration");
+		
+		// LAYOUT
+		gc.insets = new Insets(20,10,10,0);
+		
+		// PANELS
+		hPan = new JPanel();
+		lPan = new JPanel();
+		rPan = new JPanel();
+		cPan = new JPanel();
+		cPan.setLayout(new GridLayout(1,2));
+		dPan = new JPanel(new GridLayout(1,2));
+		
+		// COMPONENTS
+		Title = new JTextArea("General Admission Registration");
+		Title.setFont(new Font("Serif", Font.BOLD, 25));
+		Title.setBackground(Color.WHITE);
+
+		lName = new Label("Name ");
+		lName.setFont(new Font("Serif", Font.BOLD, 15));
+		
+		lEmail = new Label("Email ");
+		lEmail.setFont(new Font("Serif", Font.BOLD, 15));
+		
+		lGender = new Label("Gender ");
+		lGender.setFont(new Font("Serif", Font.BOLD, 15));
+		
+		lPhone = new Label("Phone ");
+		lPhone.setFont(new Font("Serif", Font.BOLD, 15));
+		
+		lContact = new Label("Emergency Contact");
+		lContact.setFont(new Font("Serif", Font.BOLD, 15));
+
+		lPark = new Label("Do you require parking?");
+		lPark.setFont(new Font("Serif", Font.BOLD, 15));
+
+		lRoom = new Label("What is you room preference?");
+		lRoom.setFont(new Font("Serif", Font.BOLD, 15));
+		
+		
+		// **********************************************
+		lRes = new Label("Do you have dietary restrictions?");
+		lRes.setFont(new Font("Serif", Font.BOLD, 15));
+
+		lAtt = new Label("What activities will you attend?");
+		lAtt.setFont(new Font("Serif", Font.BOLD, 15));
+		
+		lList = new Label("Do you want to see the list of other");
+		lList.setFont(new Font("Serif", Font.BOLD, 15));
+		lList2 = new Label("attendees and their profiles on the");
+		lList2.setFont(new Font("Serif", Font.BOLD, 15));
+		lList3 = new Label("official event app?");
+		lList3.setFont(new Font("Serif", Font.BOLD, 15));
+
+		tFName = new TextField("First Name", 12);
+		tLName = new TextField("Last Name", 12);
+		tEmail = new TextField("sample@example.com", 27);
+		tPhone = new TextField(27);
+		tContact = new TextField(27);
+
+		
+		bMale = new JRadioButton(" Male ");
+		bFemale = new JRadioButton(" Female ");
+		bYes = new JRadioButton(" Yes ");
+		bNo = new JRadioButton(" No ");
+		bR1 = new JRadioButton(" Single Room ");
+		bR2 = new JRadioButton(" Shared Room ");
+		bR3 = new JRadioButton(" No Room Needed ");
+		
+		bD1 = new JRadioButton(" None ");
+		bD2 = new JRadioButton(" Vegetarian ");
+		bD3 = new JRadioButton(" Glutten Allergy ");
+		bD4 = new JRadioButton(" Lactose Allergy ");
+		bD5 = new JRadioButton(" Nut Allergy ");
+		bD6 = new JRadioButton(" Shellfish Allergy ");
+
+		bA1 = new JRadioButton(" Awards Gala Dinner ");
+		bA2 = new JRadioButton(" Luncheon ");
+		bA3 = new JRadioButton(" Town Hall ");
+		
+		bYes2 = new JRadioButton(" Yes ");
+		bNo2 = new JRadioButton(" No ");
+
+		
+	}
+	
+	public void startApp()
+	{
+		hPan.add(Title);
+		cPan.add(lPan);
+		cPan.add(rPan);
+		
+		
+//**************************************** LEFT SIDE ****************************************
+			lPan.setLayout(new GridBagLayout());
+			
+			// name
+			gc.gridx = 0;
+			gc.gridy = 0;
+			lPan.add(lName,gc);
+			
+			gc.gridx = 1;
+			gc.gridy = 0;
+			lPan.add(tFName, gc);
+			
+			
+			gc.gridx = 2;
+			gc.gridy = 0;
+			lPan.add(tLName, gc);
+			
+			// email
+			gc.gridx = 0;
+			gc.gridy = 1;
+			lPan.add(lEmail, gc);
+			
+			gc.gridwidth = 2;
+			gc.gridx = 1;
+			gc.gridy = 1;
+			lPan.add(tEmail, gc);
+			
+			// gender
+			gc.gridwidth = 1;
+			gc.gridx = 0;
+			gc.gridy = 2;
+			lPan.add(lGender,gc);
+			
+			gc.gridx = 1;
+			gc.gridy = 2;
+			lPan.add(bMale,gc );
+			
+			gc.gridx = 2;
+			gc.gridy = 2;
+			lPan.add(bFemale,gc);
+		
+			// phone
+			gc.gridx = 0;
+			gc.gridy = 3;
+			lPan.add(lPhone, gc);
+			
+			gc.gridwidth = 2;
+			gc.gridx = 1;
+			gc.gridy = 3;
+			lPan.add(tPhone, gc);
+			
+			
+			// contact
+			gc.gridwidth = 1;
+			gc.gridx = 1;
+			gc.gridy = 4;
+			lPan.add(lContact, gc);
+			
+			gc.gridwidth = 2;
+			gc.gridx = 1;
+			gc.gridy = 5;
+			lPan.add(tContact, gc);
+		
+			
+			// parking
+			gc.gridwidth = 1;
+			gc.gridx = 1;
+			gc.gridy = 6;
+			lPan.add(lPark, gc);
+			
+			gc.gridwidth = 50;
+			gc.gridx = 0;
+			gc.gridy = 7;
+			lPan.add(bYes, gc);
+			
+			gc.gridx = 2;
+			gc.gridy = 7;
+			lPan.add(bNo, gc);
+		
+			
+			// room
+			gc.gridwidth = 3;
+			gc.gridx = 0;
+			gc.gridy = 8;
+			lPan.add(lRoom, gc);
+			
+			gc.gridwidth = 1;
+			gc.gridx = 1;
+			gc.gridy = 9;
+			lPan.add(bR1, gc);
+			
+			gc.gridx = 1;
+			gc.gridy = 10;
+			lPan.add(bR2, gc);
+			
+			gc.gridx = 1;
+			gc.gridy = 11;
+			lPan.add(bR3, gc);
+		
+			
+//**************************************** RIGHT SIDE ****************************************
+		
+			
+			rPan.setLayout(new GridLayout(17,2));
+			rPan.add(lRes);
+			rPan.add(bD1);
+			rPan.add(bD2);
+			rPan.add(bD3);
+			rPan.add(bD4);
+			rPan.add(bD5);
+			rPan.add(bD6);
+			
+			rPan.add(lAtt);
+			rPan.add(bA1);
+			rPan.add(bA2);
+			rPan.add(bA3);
+			
+			rPan.add(lList);
+			rPan.add(lList2);
+			rPan.add(lList3);
+			rPan.add(dPan);
+			dPan.add(bYes2);
+			dPan.add(bNo2);
+				
+		// FRAME
+		f1.add(hPan, BorderLayout.NORTH);
+		f1.add(cPan, BorderLayout.CENTER);
+
+		f1.pack();	
+		f1.setSize(900,750);
+		f1.setVisible(true);
+		f1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	}
+	
+	public static void main(String[] args)
+	{
+		Zyke ze = new Zyke();
+		ze.startApp();
+	}
+	
+	
+}
